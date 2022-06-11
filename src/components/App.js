@@ -17,16 +17,16 @@ function App()
 		if(todo !== ""){
 			dispatch({type:"add",value:todo,index:""});
 			setTodo("");
+		}else{
+			setTodo("");
 		}
 	}
 	return (
 	<div id="main">
 		<h1>Todo List</h1>
 		<div className="add-div">
-			<form onSubmit={addTodo}>
 			<input type="text" id="task" placeholder="Add todo" value={todo} onChange={valueHandler} required/>
-			<button id="btn">Add</button>
-			</form>
+			<button id="btn" onClick={addTodo}>Add</button>
 		</div>
 		<div>
 			<ol>
